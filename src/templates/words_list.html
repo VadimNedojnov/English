@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Words{% endblock title %}
+
+{% block content %}
+
+<div>
+    <table class="table table-bordered table-sm">
+        <caption>Words List</caption>
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>English</th>
+                <th>Russian</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        {% for obj in object_list %}
+            <tr>
+                <th>{{ obj.id }}</th>
+                <td>{{ obj.english_word }}</td>
+                <td>{{ obj.russian_word }}</td>
+                <td>{{ obj.created }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
