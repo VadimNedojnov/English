@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Game{% endblock %}
+
+
+{% block content %}
+  <h2>Right</h2>
+{% for word in words %}
+<div>
+  <h1>{{ word }}</h1>
+  <form method="post" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Check</button>
+  </form>
+</div>
+{% endfor %}
+{% endblock content %}
